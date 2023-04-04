@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../components/container_widget.dart';
+
 class Home extends StatelessWidget {
   const Home({super.key});
 
@@ -26,25 +28,15 @@ class Home extends StatelessWidget {
         resizeToAvoidBottomInset: false,
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
-          child: Column(children: [
-            Container(
-              margin: const EdgeInsets.symmetric(horizontal: 15.0),
-              height: MediaQuery.of(context).size.height / 2.8,
-              width: MediaQuery.of(context).size.width / 2.5,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 4,
-                    blurRadius: 9,
-                    offset: const Offset(0, 3),
-                  ),
-                ],
-              ),
-            ),
-          ]),
+          child: Column(
+              children: List.generate(5, (index) {
+            return Row(
+              children: const [
+                Expanded(child: ContainerWidget()),
+                Expanded(child: ContainerWidget()),
+              ],
+            );
+          })),
         ),
       ),
     );

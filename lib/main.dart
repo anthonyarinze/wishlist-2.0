@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wishlist/components/home_page.dart';
+import 'package:wishlist/pages/home_page.dart';
 
 void main() {
   runApp(const MyApp());
